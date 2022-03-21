@@ -1,3 +1,5 @@
+from django.urls import reverse_lazy
+from django.views.generic import ListView, CreateView
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 
@@ -40,3 +42,13 @@ def mascota_delete(request, id_mascota):
 		return redirect('mascota:mascota_listar')
 	return render(request, 'mascota/mascota_delete.html', {'mascota':mascota})
 
+class MascotaList(ListView):
+	model = Mascota
+	template_name = 'mascota/mascota_list.html'
+	paginate_by = 2
+
+class MascotaCreate(CreateView):
+	model = Mascota
+	form_class = MascotaForm
+	template_name = 'mascota/mascota_form.html'
+	success_url = reverse_lazy('mascota:mascota_listar')
