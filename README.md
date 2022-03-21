@@ -33,16 +33,24 @@ este import cambia
 from django.core.urlresolvers import reverse_lazy a este from django.urls import reverse_lazy
 
 
-16.- UpdateView y DeleteView, vistas basadas en clases.mp4
-17.- CRUD con dos formularios Parte 1.mp4
-18.- CRUD con dos formularios Parte 2.mp4
-19.- Crear Registro de Usuarios (modelo).mp4
-20.- Crear login (facilito).mp4
-21.- Recuperar contraseña por correo (facilito).mp4
-22.- Decorador login required.mp4
-23.- Serializar objetos.mp4
-24.- Paginación.mp4
-25.- Restframework ModelSerializer.mp4
+16.- UpdateView y DeleteView, vistas basadas en clases
+
+cuando las vistas se pasar por clase los parametros en la url deben pasarse asi sino django se pone a llorar
+
+path("editar/<int:pk>",MascotaUpdate.as_view(), name="mascota_editar"),
+    path("eliminar/<int:pk>", MascotaDelete.as_view(), name="mascota_eliminar"),
+
+    pk debe ser una abreviatura de primary key
+
+17.- CRUD con dos formularios Parte 1
+18.- CRUD con dos formularios Parte 2
+19.- Crear Registro de Usuarios (modelo)
+20.- Crear login (facilito)
+21.- Recuperar contraseña por correo (facilito)
+22.- Decorador login required
+23.- Serializar objetos
+24.- Paginación
+25.- Restframework ModelSerializer
 
 
 
