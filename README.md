@@ -10,4 +10,14 @@ estoy usando  {% load static %} en vez de {% load staticfiles%} creo que esta es
 corrigiendo como se hacen los nombres de espacio ahora se hace asi, no se porque
 
   path('mascota/', include( ('apps.mascota.urls','mascota'), namespace='mascota')),
-  
+
+
+video 11
+
+poner esto para que lea la carpeta de archivos estaticos en el archivo de configuracion
+STATIC_URL = "static/"
+STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
+
+
+crear carpeta en la raiz del proyecto y cargar alli los archivos estaticos
+
