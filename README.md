@@ -21,3 +21,7 @@ STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 
 crear carpeta en la raiz del proyecto y cargar alli los archivos estaticos
 
+14.- Vistas basadas en funciones actualizar y eliminar.
+
+esta es la nueva manera de pasar datos por la url  path("editar/<int:id_mascota>", mascota_edit, name="mascota_editar"), el parametro debe coincidir con el parametro que se masan en la view  def mascota_edit(request, id_mascota):
+

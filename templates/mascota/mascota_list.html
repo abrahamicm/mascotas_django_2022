@@ -35,7 +35,8 @@
     		</td>
 			<td>{{ mascota.persona.nombre }} {{ mascota.persona.apellidos }}</td>
 			<td>
-				
+				<a class="btn btn-primary" href="{% url 'mascota:mascota_editar' mascota.id %}">Editar</a>
+				<a class="btn btn-danger" href="{% url 'mascota:mascota_eliminar' mascota.id %}">Eliminar</a>
 			</td>
 		</tr>
 		{% endfor %}
@@ -45,5 +46,16 @@
 		{% endif %}
 	</tbody>
 </table> 
-
+<ul class="pager">
+	<li>
+		{% if page_obj.has_previous %}
+       	 <a href="?page={{ page_obj.previous_page_number }}">Previous</a>
+		{% endif %}
+        </li>
+	<li>
+		{% if page_obj.has_next %}
+     	 <a href="?page={{ page_obj.next_page_number }}">Next</a> 
+    	{% endif %}
+    </li>
+</ul>
 {% endblock%}
