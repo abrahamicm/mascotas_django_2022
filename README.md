@@ -43,6 +43,8 @@ path("editar/<int:pk>",MascotaUpdate.as_view(), name="mascota_editar"),
     pk debe ser una abreviatura de primary key
 
 17.- CRUD con dos formularios Parte 1
+al metodo ForeignKey hay que ponerle el parametro on_delete= sino django llora
+persona = models.ForeignKey(Persona, null=True, blank=True, on_delete=models.CASCADE)
 18.- CRUD con dos formularios Parte 2
 19.- Crear Registro de Usuarios (modelo)
 20.- Crear login (facilito)
