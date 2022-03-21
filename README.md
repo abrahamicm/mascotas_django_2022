@@ -5,3 +5,9 @@ proyecto de mascotas del tutorial de codigo facilito de django [enlace ](https:/
 cambios de version
 
 estoy usando  {% load static %} en vez de {% load staticfiles%} creo que esta esta deprecada
+
+
+corrigiendo como se hacen los nombres de espacio ahora se hace asi, no se porque
+
+  path('mascota/', include( ('apps.mascota.urls','mascota'), namespace='mascota')),
+  
