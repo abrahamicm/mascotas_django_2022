@@ -5,7 +5,18 @@ from django.http import HttpResponse
 
 from apps.mascota.forms import MascotaForm
 from apps.mascota.models import Mascota
+from django.core import serializers
+from django.contrib.auth.models import User
 # Create your views here.
+
+def listado(request):
+	lista = serializers.serialize('json', Mascota.objects.all())
+	return HttpResponse(lista, content_type='application/json')
+
+def listadousuarios(request):
+	lista = serializers.serialize('json', User.objects.all(),fields=['username', 'first_name'])
+	return HttpResponse(lista, content_type='application/json')
+
 def index(request):
     return render(request,"mascota/index.html")
 

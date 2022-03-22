@@ -10,6 +10,8 @@ from apps.mascota.views import (
     mascota_list,
     mascota_edit,
     mascota_delete,
+    listado,
+    listadousuarios
 )
 
 urlpatterns = [
@@ -21,6 +23,8 @@ urlpatterns = [
 
     path("editar/<int:pk>",login_required(MascotaUpdate.as_view()), name="mascota_editar"),
     path("eliminar/<int:pk>", login_required(MascotaDelete.as_view()), name="mascota_eliminar"),
+    path('listado', listado, name="listado"),
+    path('listadousuarios', listadousuarios, name="listadousuarios"),
 
    
 
