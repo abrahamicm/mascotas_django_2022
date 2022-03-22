@@ -1,4 +1,5 @@
 from django.urls import path
+from django.contrib.auth.decorators import login_required
 from apps.mascota.views import (
     MascotaCreate,
     MascotaList,
@@ -15,11 +16,11 @@ urlpatterns = [
     path("", index, name="index"),
 
 
-    path("nuevo", MascotaCreate.as_view(), name="mascota_crear"),
-    path("listar", MascotaList.as_view(), name="mascota_listar"),
+    path("nuevo", login_required(MascotaCreate.as_view()), name="mascota_crear"),
+    path("listar", login_required(MascotaList.as_view()), name="mascota_listar"),
 
-    path("editar/<int:pk>",MascotaUpdate.as_view(), name="mascota_editar"),
-    path("eliminar/<int:pk>", MascotaDelete.as_view(), name="mascota_eliminar"),
+    path("editar/<int:pk>",login_required(MascotaUpdate.as_view()), name="mascota_editar"),
+    path("eliminar/<int:pk>", login_required(MascotaDelete.as_view()), name="mascota_eliminar"),
 
    
 
