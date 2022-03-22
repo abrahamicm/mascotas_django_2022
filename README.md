@@ -48,6 +48,12 @@ persona = models.ForeignKey(Persona, null=True, blank=True, on_delete=models.CAS
 18.- CRUD con dos formularios Parte 2
 19.- Crear Registro de Usuarios (modelo)
 20.- Crear login (facilito)
+
+asi se llaman las vistas del login ahora
+  path('accounts/login/', LoginView.as_view(template_name='index.html'), name='login'),
+    path('reset/password_reset',PasswordResetView.as_view(template_name='registration/password_reset_email.html'), 
+        name='password_reset'), 
+
 21.- Recuperar contraseña por correo (facilito)
 22.- Decorador login required
 23.- Serializar objetos
